@@ -23,7 +23,7 @@ server.use(require("express-session")({
     resave: false,
     saveUninitialized: true,
     cookie: { 
-        secure: true 
+        secure: false // set in true if the website use https 
     }
 }));
 
