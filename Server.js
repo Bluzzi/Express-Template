@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const fs = require("fs");
 
 // Create express instance :
@@ -25,6 +26,10 @@ server.use(require("express-session")({
         secure: true 
     }
 }));
+
+// Add body parser middleware for get body content (for post method) :
+server.use(bodyParser.json()); // support json encoded bodies
+server.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 // Routes and 404 error :
 fs.readdirSync("./routes/").forEach(fileName => {
