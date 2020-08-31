@@ -1,0 +1,19 @@
+{
+  "name": "express-website-template",
+  "version": "1.0.0",
+  "main": "Server.js",
+  "scripts": {
+    "start": "node .",
+    "startmon": "nodemon -e * ."
+  },
+  "dependencies": {
+    "express": "~4.16.1",
+    "cookie-parser": "~1.4.4",
+    "express-session": "^1.17.1",
+    "morgan": "~1.9.1",
+    "twig": "^1.15.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
