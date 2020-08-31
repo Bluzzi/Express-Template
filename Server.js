@@ -38,18 +38,18 @@ server.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
  * 
  * If no "login-route" key is specified, the visitor will be redirected to the root of the site.
  * 
- * To add permissions to a visitor, you have to go through the sessions, there is an array with the key "access" in it, this is where you have to add the permissions.
+ * To add permissions to a visitor, you have to go through the sessions, there is an array with the key "privileges" in it, this is where you have to add the permissions.
  * 
- * Example for add "ADMIN" permission : request.session.access.push("ADMIN");
+ * Example for add "ADMIN" permission : request.session.privileges.push("ADMIN");
  */
 
 let privileges = JSON.parse(fs.readFileSync("privileges.json", {encoding: "utf-8"}));
 
 server.use((request, response, next) => {
-    if(!request.session.access) request.session.access = [];
+    if(!request.session.privileges) request.session.access = [];
 
     for(let [key, value] of Object.entries(privileges)){
-        if(request.session.access.includes(key)) continue;
+        if(request.session.privileges.includes(key)) continue;
 
         for(let routeKey in value["routes-access"]){
             if(request.url.startsWith("/" + value["routes-access"][routeKey])){
