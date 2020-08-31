@@ -31,6 +31,42 @@ server.use(require("express-session")({
 server.use(bodyParser.json()); // support json encoded bodies
 server.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
+// Middleware for secure pages access :
+
+/**
+ * The privilege system uses the privileges.json configuration to set the accesses to the different pages as well as the page that allows the connection.
+ * 
+ * If no "login-route" key is specified, the visitor will be redirected to the root of the site.
+ * 
+ * To add permissions to a visitor, you have to go through the sessions, there is an array with the key "access" in it, this is where you have to add the permissions.
+ * 
+ * Example for add "ADMIN" permission : request.session.access.push("ADMIN");
+ */
+
+let privileges = JSON.parse(fs.readFileSync("privileges.json", {encoding: "utf-8"}));
+
+server.use((request, response, next) => {
+    if(!request.session.access) request.session.access = [];
+
+    for(let [key, value] of Object.entries(privileges)){
+        if(request.session.access.includes(key)) continue;
+
+        for(let routeKey in value["routes-access"]){
+            if(request.url.startsWith("/" + value["routes-access"][routeKey])){
+                if(value["login-route"]){
+                    response.redirect(value["login-route"]);
+                } else {
+                    response.redirect("/");
+                }
+
+                return;
+            }
+        }
+    }
+
+    next();
+});
+
 // Routes and 404 error :
 fs.readdirSync("./routes/").forEach(fileName => {
     server.use(require("./routes/" + fileName))

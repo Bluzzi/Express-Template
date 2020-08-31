@@ -1,0 +1,15 @@
+{
+    "ADMIN": {
+        "routes-access": [
+            "admin",
+            "server"
+        ]
+    },
+    "USER": {
+        "login-route": "login",
+        "routes-access": [
+            "editor", 
+            "logs"
+        ]
+    }
+}
