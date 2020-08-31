@@ -46,7 +46,7 @@ server.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 let privileges = JSON.parse(fs.readFileSync("privileges.json", {encoding: "utf-8"}));
 
 server.use((request, response, next) => {
-    if(!request.session.privileges) request.session.access = [];
+    if(!request.session.privileges) request.session.privileges = [];
 
     for(let [key, value] of Object.entries(privileges)){
         if(request.session.privileges.includes(key)) continue;
