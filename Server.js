@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const fs = require("fs");
 
 // Create express instance :
-let server = express();
+global.server = express();
 
 // Setup the logger :
 server.use(require("morgan")("dev"));
@@ -68,9 +68,7 @@ server.use((request, response, next) => {
 });
 
 // Routes and 404 error :
-fs.readdirSync("./routes/").forEach(fileName => {
-    server.use(require("./routes/" + fileName))
-});
+fs.readdirSync("./routes/").forEach(fileName => require("./routes/" + fileName));
 
 server.get("*", function(request, response){
     response.status(404);

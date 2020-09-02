@@ -1,7 +1,4 @@
-const express = require("express");
-const router = express.Router();
-
-router.get("/", (request, response) => {
+server.get("/", (request, response) => {
     response.render(
         "pages/index", 
         { 
@@ -9,5 +6,3 @@ router.get("/", (request, response) => {
         }
     );
 });
-
-module.exports = router;
