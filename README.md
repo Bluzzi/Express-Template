@@ -14,7 +14,7 @@ This template use the Express package from Node.js and offers to start working w
 - Possibility to create your own "Error 404" page.
 - Privilege system to avoid access to undesired routes from a visitor who hasn't the required privileges.
 
-# Contribution
+## Contribution
 
 
 If you want to contribute to this project's evolution by asking for adds with pull requests, you're welcome !
