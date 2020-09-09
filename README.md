@@ -10,6 +10,7 @@ This template use the Express package from Node.js and offers to start working w
 - "public" folder wich will contain everything the visitor has to download: pictures, fonts, scripts, stylesheets...
 - Simple routes system.
 - Different views wich will work as by default with "Twig".
+- Support of Sass CSS preprocessor.
 - Logs system.
 - Possibility to create your own "Error 404" page.
 - Privilege system to avoid access to undesired routes from a visitor who hasn't the required privileges.
