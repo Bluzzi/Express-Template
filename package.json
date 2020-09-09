@@ -4,8 +4,7 @@
   "main": "Server.js",
   "author": "bluzzi",
   "scripts": {
-    "start": "node .",
-    "startmon": "nodemon -e js,scss,twig,json ."
+    "start": "nodemon -e js,scss,twig,json ."
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
