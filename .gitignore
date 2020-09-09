@@ -105,3 +105,6 @@ dist
 
 # Package lock
 package-lock.json
+
+# Stylesheets 
+stylesheets/
