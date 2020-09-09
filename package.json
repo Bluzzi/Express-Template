@@ -2,15 +2,18 @@
   "name": "express-website-template",
   "version": "1.0.0",
   "main": "Server.js",
+  "author": "bluzzi",
   "scripts": {
     "start": "node .",
-    "startmon": "nodemon -e * ."
+    "startmon": "nodemon -e js,scss,twig,json ."
   },
   "dependencies": {
-    "express": "~4.16.1",
     "cookie-parser": "~1.4.4",
+    "express": "~4.16.1",
     "express-session": "^1.17.1",
     "morgan": "~1.9.1",
+    "sass": "^1.26.10",
+    "sass-folder-converter": "^1.0.3",
     "twig": "^1.15.2"
   },
   "devDependencies": {

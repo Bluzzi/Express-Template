@@ -1,6 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require("fs");
+const convertSass = require("sass-folder-converter");
+
+// Convert SASS to CSS :
+convertSass(__dirname + "/public/sass/", __dirname + "/public/stylesheets/");
 
 // Create express instance :
 global.server = express();
