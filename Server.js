@@ -58,7 +58,7 @@ server.use((request, response, next) => {
         for(let routeKey in value["routes-access"]){
             if(request.url.startsWith("/" + value["routes-access"][routeKey])){
                 if(value["login-route"]){
-                    response.redirect(value["login-route"]);
+                    response.redirect("/" + value["login-route"]);
                 } else {
                     response.redirect("/");
                 }
