@@ -6,7 +6,7 @@ const convertSass = require("sass-folder-converter");
 //TODO : https://www.npmjs.com/package/express-mailer
 
 // Convert SASS to CSS :
-convertSass(__dirname + "/public/sass/", __dirname + "/public/stylesheets/");
+convertSass(__dirname + "/public/sass/", __dirname + "/public/css/");
 
 // Create express instance :
 global.server = express();
