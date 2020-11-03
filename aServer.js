@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const fs = require("fs");
 const convertSass = require("sass-folder-converter");
 
+//TODO : https://www.npmjs.com/package/express-mailer
+
 // Convert SASS to CSS :
 convertSass(__dirname + "/public/sass/", __dirname + "/public/stylesheets/");
 
@@ -72,7 +74,7 @@ server.use((request, response, next) => {
 });
 
 // Routes and 404 error :
-fs.readdirSync("./routes/").forEach(fileName => require("./routes/" + fileName));
+fs.readdirSync("./routes/").forEach(fileName => require("./routes/" + fileName)); //TODO: ajout du support des sous dossier.
 
 server.get("*", function(request, response){
     response.status(404);
