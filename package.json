@@ -4,16 +4,16 @@
   "main": "Server.js",
   "author": "bluzzi",
   "scripts": {
-    "start": "nodemon -e js,scss,twig,json ."
+    "start": "nodemon -e js,scss,ejs,json ."
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
+    "ejs": "^3.1.5",
     "express": "~4.16.1",
     "express-session": "^1.17.1",
     "morgan": "~1.9.1",
     "sass": "^1.26.10",
-    "sass-folder-converter": "^1.0.3",
-    "twig": "^1.15.2"
+    "sass-folder-converter": "^1.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
