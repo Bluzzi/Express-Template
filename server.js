@@ -78,7 +78,10 @@ server.use((request, response, next) => {
 // Routes and 404 error :
 fs.readdirSync(__dirname + "/routes/").forEach(fileName => require("./routes/" + fileName)); //TODO: ajout du support des sous dossier.
 
-server.get("*", (request, response) => response.render("error").status(404));
+server.get("*", (request, response) => {
+    response.render("error");
+    response.status(404);
+});
 
 // Listen port :
 server.listen(3000);
