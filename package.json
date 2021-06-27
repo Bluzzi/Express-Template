@@ -1,10 +1,11 @@
 {
   "name": "express-website-template",
   "version": "1.0.0",
-  "main": "Server.js",
-  "author": "bluzzi",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon -e js,scss,ejs,json ."
+    "start": "node .",
+    "dev": "nodemon -e js,scss,ejs,json ."
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
