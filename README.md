@@ -7,7 +7,7 @@ This template use the Express package from Node.js and offers to start working w
 ## Installation 
 Do this commands by replacing ``projectName`` with the name of your project :
 ```sh
-npx degit https://github.com/Leepo-Team/Express-Template projectName
+npx degit https://github.com/Leepo-Team/Express-Template#1.0.0 projectName
 cd projectName
 ```
 
